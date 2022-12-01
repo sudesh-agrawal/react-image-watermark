@@ -78,7 +78,13 @@ const Uploader = () => {
               Click or Drop here
             </button>
             &nbsp;
-            <button onClick={onImageRemoveAll}>Remove</button>
+            <button
+              onClick={() => {
+                onImageRemoveAll()
+                setConvertedImage(undefined)
+              }}>
+              Remove
+            </button>
             {imageList.map((image, index) => (
               <div key={index} className="image-item">
                 <img
